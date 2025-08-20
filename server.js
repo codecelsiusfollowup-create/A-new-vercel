@@ -9,6 +9,7 @@ import dealerRoutes from './routes/dealerRoutes.js';
 import staffRoutes from './routes/staffRoutes.js';
 import propertyRoutes from './routes/propertyRoutes.js';
 import searchRoute from './routes/searchRoute.js';
+import leadRoutes from "./routes/leadRoutes.js";
 
 dotenv.config();
 connectDB();
@@ -22,6 +23,9 @@ app.use('/api', staffRoutes)
 app.use('/api/users', dealerRoutes)
 app.use('/api', adminRoutes)
 app.use('/api/auth', authRoutes);
+
+//Lead Routes
+app.use("/api/leads", leadRoutes);
 
 app.use('/api/properties', propertyRoutes);
 app.use('/api', searchRoute);
