@@ -26,6 +26,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/properties', propertyRoutes);
 app.use('/api', searchRoute);
 
+app.get('/',(req,res)=>{
+    res.send("API Working....")
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 
